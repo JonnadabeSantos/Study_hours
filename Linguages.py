@@ -14,21 +14,23 @@ while True:
         if opc == 1:
             lerArquivo(arq)
             while True:
-                resp = input('Return to menu [Y/N]?: ')
-                if resp in 'YyNn':
+                resp = input('Return to menu [Y/N]?: ') [0]
+                if resp in 'Yy':                    
+                    break
+                elif resp in 'Nn':
+                    opc = 5
                     break
                 else:
-                    print('\033[31mERROR ! Type YES or NO [m\033')
-            if resp in 'Yy':
-                break
+                    print('\033[31mERROR ! Type YES or NO \033[m')
+            
 
-        elif opc == 2:
+        if opc == 2:
             cabeçalho(F'ADIÇÃO DE HORAS EM ')
             nome = input('Nome-: ')
             idade = int(input('Idade: '))
             cadastrarNovo( arq, nome, idade )
 
-        elif opc == 5:
+        if opc == 5:
             sair()
             break
         else:

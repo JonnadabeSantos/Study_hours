@@ -13,11 +13,12 @@ def arquivoExiste(arquivo):
 def criarArquivo(nome):
     try:
         a = open(nome, 'wt+')
-        a.close()
     except:
         print('Houve um ERRO na criação do arquivo')
     else:
         print(f'Arquivo  " {nome} " criado com sucesso!')
+    finally:
+        a.close()
 
 
 def lerArquivo(nome):
