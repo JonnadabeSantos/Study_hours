@@ -1,19 +1,27 @@
 from hours import *
 
 
-arq = 'Exercise\My_Exercice\Study_hours.txt'
+arq = 'Study_hours.txt'
 if not arquivoExiste(arq):
     criarArquivo(arq)
   
   
 
 while True:
-    menudict( {'Python':'0', 'Java_Script':'0', 'Java':'0', 'C#':'0', 'Sair':'0'} )
+    menu( ['Python', 'Java_Script', 'Java', 'C#', 'Sair'] )
     opc = int(input(f'Selecione uma Opção: '))
     if 5 >= opc > 0:
         if opc == 1:
             lerArquivo(arq)
-                
+            while True:
+                resp = input('Return to menu [Y/N]?: ')
+                if resp in 'YyNn':
+                    break
+                else:
+                    print('\033[31mERROR ! Type YES or NO [m\033')
+            if resp in 'Yy':
+                break
+
         elif opc == 2:
             cabeçalho(F'ADIÇÃO DE HORAS EM ')
             nome = input('Nome-: ')

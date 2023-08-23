@@ -26,7 +26,7 @@ def lerArquivo(nome):
     except:
         print('Erro ao ler o arquivo')
     else:
-        cabeçalho('PESSOAS CADASTRADAS')
+        cabeçalho('Hours Studied')
         for linha in a:
             dado = linha.split(';')
             dado[1] = dado[1].replace( '\n' , '' ) # isso vai remover a quebra de linha
