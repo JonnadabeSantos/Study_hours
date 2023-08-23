@@ -10,9 +10,10 @@ def cabeçalho( txt ):
 def menu(lista):
     cabeçalho('Menu Principal')
     c = 1
-    for item in lista:
+    for item in lista.keys():
         print(f'{c} - {item}')
         c += 1
+    print(f'{c} - Sair')
     linha()
 
 def cadastrar():

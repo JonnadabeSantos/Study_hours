@@ -1,14 +1,15 @@
 from hours import *
 
+linguages = {'Python': 0, 'Java_Script': 0, 'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0}
 
 arq = 'Study_hours.txt'
 if not arquivoExiste(arq):
-    criarArquivo(arq)
+    criarArquivo( arq, linguages)
   
   
 
 while True:
-    menu( ['Python', 'Java_Script', 'Java', 'C#', 'Sair'] )
+    menu( linguages )
     opc = int(input(f'Selecione uma Opção: '))
     if 5 >= opc > 0:
         if opc == 1:
