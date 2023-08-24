@@ -47,28 +47,35 @@ def lerArquivo(nome):
     else:
         print(f'{a} #')
         cabeçalho('Hours Studied')        
-        for linha in a:            
-            dado = linha.split(',')
+        print(a.readlines())
+
+        # for linha in a:            
+        #     dado = linha.split(',')
         
-        print(dado)
-        for limp in range(len(dado)):
-            dado[limp] = dado[limp].replace("{","")
-            dado[limp] = dado[limp].replace("}","")
-            dado[limp] = dado[limp].replace("'","")
-            dado[limp] = dado[limp].replace(" ","")
+        # print(dado)
+        # for limp in range(len(dado)):
+        #     dado[limp] = dado[limp].replace("{","")
+        #     dado[limp] = dado[limp].replace("}","")
+        #     dado[limp] = dado[limp].replace("'","")
+        #     dado[limp] = dado[limp].replace(" ","")
         
     
 
-        for ver in dado:
-            print(f'{ver}')
-        print(dado)
-        for sep in dado:
-            final = sep.split(':')
-            print(final)
-        print()  
-        print(dado)  
-        print()  
-        print(final)  
+        # for ver in dado:
+        #     print(f'{ver}')
+        # print(dado)
+        # ling = []
+        # for sep in dado:
+        #     final = sep.split(':')
+        #     ling.append(final)
+        # print()  
+        # print(dado)  
+        # print()  
+        # print(ling)
+
+        # dc = {}
+        # for x in range(len(ling)):
+        #     dc[ling]  
     finally:
         a.close()
 
