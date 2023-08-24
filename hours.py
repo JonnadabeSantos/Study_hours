@@ -29,22 +29,46 @@ def criarArquivo(nome,dici=''):
         a.close()
 
 
+# def arquivoExiste(nome):
+#     try:
+#         a = open(nome, 'rt')
+#     except:
+#         print('houve um ERRO na existência do arquivo!')
+#     else:
+#         a.write()
+
+
+
 def lerArquivo(nome):
     try:
         a = open(nome, 'rt')
     except:
         print('Erro ao ler o arquivo')
     else:
-        cabeçalho('Hours Studied')
-        for linha in a:
-            print(linha)
-            dado = linha.split(',')            
-            for ind in dado:
-                ind.replace( '0','1' )
-                print(ind)
-            print(f'{dado}')
-            print(f'{dado[0]}')
-            print(f'{dado[1]}')
+        print(f'{a} #')
+        cabeçalho('Hours Studied')        
+        for linha in a:            
+            dado = linha.split(',')
+        
+        print(dado)
+        for limp in range(len(dado)):
+            dado[limp] = dado[limp].replace("{","")
+            dado[limp] = dado[limp].replace("}","")
+            dado[limp] = dado[limp].replace("'","")
+            dado[limp] = dado[limp].replace(" ","")
+        
+    
+
+        for ver in dado:
+            print(f'{ver}')
+        print(dado)
+        for sep in dado:
+            final = sep.split(':')
+            print(final)
+        print()  
+        print(dado)  
+        print()  
+        print(final)  
     finally:
         a.close()
 

@@ -1,10 +1,13 @@
 from hours import *
 
-linguages = {'Python': 0, 'Java_Script': 0, 'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0}
+linguages = {'Python': 0,'Java Script': 0, 'Java': 0,'C#': 0,'SQL': 0,'PHP': 0,'C++': 1}
+ling = {'Python':'python', 'Horas': 0}
 
 arq = 'Study_hours.txt'
 if not arquivoExiste(arq):
     criarArquivo( arq, linguages)
+
+
   
   
 
