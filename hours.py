@@ -10,15 +10,33 @@ def arquivoExiste(arquivo):
         return True
     
 
-def criarArquivo(nome):
+def criarArquivo(nome,dici=''):
     try:
         a = open(nome, 'wt+')
     except:
         print('Houve um ERRO na criação do arquivo')
     else:
-        print(f'Arquivo  " {nome} " criado com sucesso!')
+        try:
+            a.write(f'{dici}')
+        except:
+            print('Houve um erro na escrita dos dados!')
+        else:
+            
+            print(f'Arquivo  " {nome} " criado com sucesso!')
+
+
     finally:
         a.close()
+
+
+# def arquivoExiste(nome):
+#     try:
+#         a = open(nome, 'rt')
+#     except:
+#         print('houve um ERRO na existência do arquivo!')
+#     else:
+#         a.write()
+
 
 
 def lerArquivo(nome):
@@ -26,12 +44,24 @@ def lerArquivo(nome):
         a = open(nome, 'rt')
     except:
         print('Erro ao ler o arquivo')
-    else:
-        cabeçalho('Hours Studied')
-        for linha in a:
-            dado = linha.split(';')
-            dado[1] = dado[1].replace( '\n' , '' ) # isso vai remover a quebra de linha
-            print(f'{dado[0]:<30}{dado[1]:>3} anos')
+    else:     
+        cabeçalho('Hours Studied')        
+        for linha in a:            
+            dado = linha.split(',')
+               
+        for limp in range(len(dado)):
+            dado[limp] = dado[limp].replace("{","")
+            dado[limp] = dado[limp].replace("}","")
+            dado[limp] = dado[limp].replace("'","")
+            dado[limp] = dado[limp].replace(" ","")
+        
+        registroGeral = {}  
+        for separar in dado:
+            keyValue = separar.split(':')
+            registroGeral[keyValue[0]] = keyValue[1]                 
+        
+        print(registroGeral)
+    
     finally:
         a.close()
 
