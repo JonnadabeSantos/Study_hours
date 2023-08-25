@@ -1,8 +1,7 @@
 from hours import *
 
 linguages = {'Python': 0,'Java Script': 0, 'Java': 0,'C#': 0,'SQL': 0,'PHP': 0,'C++': 1}
-lingu = ['{"Python": 0}','{"Java Script": 0}', '{"Java": 0,}', '{"C#": 0 }',  '{"SQL": 0 }', '{"PHP": 0,}', '{"C++": 1}']
-print(lingu[0][2])
+
 
 
 arq = 'Study_hours.txt'

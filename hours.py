@@ -62,18 +62,31 @@ def lerArquivo(nome):
         for ver in dado:
             print(f'{ver}')
         print(dado)
-        ling = []
+        k = []
+        v = []
         for sep in dado:
             final = sep.split(':')
-            ling.append(final)
+            k.append(final)
+           
         print()  
         print(dado)  
         print()  
-        print(ling)
+        print(k)
+        print(v)
+        dc = {}  
+        for x, z in enumerate(k):              
+            dc[z[0]] = z[1]
 
-        dc = {}
-        for x in range(len(ling)):
-            dc[ling]  
+        
+        
+        print(dc)
+        print(dc['Python'])
+        print(dc['C++'])
+        print(dc['Java'])
+
+            
+                 
+
     finally:
         a.close()
 
