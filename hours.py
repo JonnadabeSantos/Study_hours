@@ -1,6 +1,6 @@
 from dados import *
 
-def arquivoExiste(arquivo):
+def verificarArquivo(arquivo):
     try:        
         with open(arquivo, 'rt') as a: # 'rt vai ler um arquivo de texto 
             a.close() # fecha o arquivo
@@ -23,23 +23,11 @@ def criarArquivo(nome,dici=''):
         else:
             
             print(f'Arquivo  " {nome} " criado com sucesso!')
-
-
     finally:
         a.close()
 
 
-# def arquivoExiste(nome):
-#     try:
-#         a = open(nome, 'rt')
-#     except:
-#         print('houve um ERRO na existência do arquivo!')
-#     else:
-#         a.write()
-
-
-
-def lerArquivo(nome):
+def arquivoExiste(nome):
     try:
         a = open(nome, 'rt')
     except:
@@ -60,7 +48,7 @@ def lerArquivo(nome):
             keyValue = separar.split(':')
             registroGeral[keyValue[0]] = keyValue[1]                 
         
-        print(registroGeral)
+        print(registroGeral)    
     
     finally:
         a.close()
