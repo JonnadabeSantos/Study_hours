@@ -1,4 +1,4 @@
-from dados import *
+from menus import *
 
 def verificarArquivo(arquivo):
     try:        
@@ -33,7 +33,6 @@ def arquivoExiste(nome):
     except:
         print('Erro ao ler o arquivo')
     else:     
-        cabeçalho('Hours Studied')        
         for linha in a:            
             dado = linha.split(',')
                
@@ -46,10 +45,7 @@ def arquivoExiste(nome):
         registroGeral = {}  
         for separar in dado:
             keyValue = separar.split(':')
-            registroGeral[keyValue[0]] = keyValue[1]                 
-        
-        print(registroGeral)    
-    
+            registroGeral[keyValue[0]] = keyValue[1]    
     finally:
         a.close()
 

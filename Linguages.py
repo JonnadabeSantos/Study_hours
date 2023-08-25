@@ -1,6 +1,6 @@
 from hours import *
 
-linguages = {'Python': 0,'Java Script': 0, 'Java': 58,'C#': 0,'SQL': 0,'PHP': 0,'C++': 0}
+linguages = {'Python': 0, 'Java Script': 0, 'Ruby':0, 'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0, 'Golang': 0}
 
 
 

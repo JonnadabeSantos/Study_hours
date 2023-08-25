@@ -6,12 +6,11 @@ def cabeçalho( txt ):
     print(txt.center(40) )
     linha()
 
-
 def menu(lista):
     cabeçalho('Menu Principal')
     c = 1
-    for item in lista.keys():
-        print(f'{c} - {item}')
+    for key, value in lista.items():
+        print(f'{c:>2} - {key:<24}{value:>4} Hours')
         c += 1
     print(f'{c} - Sair')
     linha()
