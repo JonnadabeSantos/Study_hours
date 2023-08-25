@@ -44,49 +44,24 @@ def lerArquivo(nome):
         a = open(nome, 'rt')
     except:
         print('Erro ao ler o arquivo')
-    else:
-        print(f'{a} #')
+    else:     
         cabeçalho('Hours Studied')        
         for linha in a:            
             dado = linha.split(',')
-        
-        print(dado)
+               
         for limp in range(len(dado)):
             dado[limp] = dado[limp].replace("{","")
             dado[limp] = dado[limp].replace("}","")
             dado[limp] = dado[limp].replace("'","")
             dado[limp] = dado[limp].replace(" ","")
         
+        registroGeral = {}  
+        for separar in dado:
+            keyValue = separar.split(':')
+            registroGeral[keyValue[0]] = keyValue[1]                 
+        
+        print(registroGeral)
     
-
-        for ver in dado:
-            print(f'{ver}')
-        print(dado)
-        k = []
-        v = []
-        for sep in dado:
-            final = sep.split(':')
-            k.append(final)
-           
-        print()  
-        print(dado)  
-        print()  
-        print(k)
-        print(v)
-        dc = {}  
-        for x, z in enumerate(k):              
-            dc[z[0]] = z[1]
-
-        
-        
-        print(dc)
-        print(dc['Python'])
-        print(dc['C++'])
-        print(dc['Java'])
-
-            
-                 
-
     finally:
         a.close()
 
