@@ -45,9 +45,11 @@ def arquivoExiste(nome):
         registroGeral = {}  
         for separar in dado:
             keyValue = separar.split(':')
-            registroGeral[keyValue[0]] = keyValue[1]    
-    finally:
+            registroGeral[keyValue[0]] = keyValue[1]
+        
         a.close()
+        return registroGeral    
+    
 
 
 def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
