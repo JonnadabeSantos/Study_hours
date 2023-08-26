@@ -1,7 +1,7 @@
 from time import sleep
 from hours import *
 
-linguages = {'Python': 0, 'Java Script': 0, 'ruby': 0,'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0, 'Golang': 0}
+linguages = {'Python': 40, 'Java Script': 0, 'ruby': 0,'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0, 'Golang': 0 ,'CSS':0}
 
 
 
@@ -14,23 +14,47 @@ else:
    
 
 while True:
+    print()
     menu( registoGeral )
-    try :
+    keylist = []
+    
+    for key in registoGeral.keys():
+        keylist.append(key)
+    
+    try :        
         opc = int(input(f'Select Option: '))
         
         if len( linguages ) + 1 >= opc > 0:
-            if opc == 1:           
+            if opc == 1:
+                linha()
+                cabeçalho('Python language selected !')
                 while True:
-                    resp = input('Return to menu [Y/N]?: ') [0]
-                    if resp in 'Yy':                    
-                        break
-                    elif resp in 'Nn':
-                        opc = 5
-                        break
-                    else:
-                        print('\033[31mERROR ! Type YES or NO \033[m')
-                
+                    try:
+                        resp = input(f'\nWant to add hours {keylist[ opc -1 ]} language? [Y/N]?: ') [0]            
+                        if resp in 'Yy':
+                            print()                    
+                            print()                    
+                            cabeçalho(f'Adding hours to {keylist[ opc -1 ]} studies')
+                            for key, value in registoGeral.items():
+                                if key == keylist[ opc -1 ]:                                    
+                                    print(f'{key:<33}{value} Hours')                               
+                            addhours = int(input('Enter the number of hours: '))
+                            registoGeral['Python'] = ( int(registoGeral['Python']) + addhours )
+                            # registoGeral['Python'] = int(registoGeral['Python']) + int(input('Enter the number of hours: '))
+                            updateDict( arq,registoGeral )
+                            print(f'Successfully adding {addhours} hours to your {keylist[ opc - 1 ]} studies')
+                            
 
+                        elif resp in 'Nn':                     
+                            break
+                        else:
+                            print('\nIvalid Option ! Type YES or NO')
+                            sleep(1)
+
+                    except:
+                        print('\033[31m\nERROR ! Invalid value \033[m')
+                        sleep(1)
+                                     
             if opc == 2:
                 cabeçalho(F'ADIÇÃO DE HORAS EM ')
                 nome = input('Nome-: ')
