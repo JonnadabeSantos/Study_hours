@@ -48,7 +48,21 @@ def arquivoExiste(nome):
             registroGeral[keyValue[0]] = keyValue[1]
         
         a.close()
-        return registroGeral    
+        return registroGeral  
+
+
+def updateDict( arq, dict ):
+    try:
+        a = open( arq, 'wt+')
+    except:
+        print('Houve um erro na abertura dos dados!')
+    else:
+        try:
+            a.write(f'{dict}' )
+            a.close()
+        except:
+            print('Houve um erro na escrita dos dados!')
+
     
 
 
