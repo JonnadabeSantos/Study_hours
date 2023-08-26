@@ -1,7 +1,7 @@
 from time import sleep
 from hours import *
 
-linguages = {'Python': 40, 'Java Script': 0, 'ruby': 0,'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0, 'Golang': 0 ,'CSS':0}
+linguages = {'Python': 0, 'Java Script': 0, 'ruby': 0,'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0, 'Golang': 0 ,'CSS':0}
 
 
 
@@ -9,17 +9,29 @@ arq = 'Study_hours.txt'
 if not verificarArquivo(arq):
     criarArquivo( arq, linguages)   
     registoGeral = arquivoExiste(arq)
+    welcome = False
 else:
     registoGeral = arquivoExiste(arq)
+    welcome = True
    
 
 while True:
     print()
-    menu( registoGeral )
     keylist = []
-    
+    mainMenu = ['Add Hours','Statisc','Exit']
+        
+    if not welcome:
+        cabeçalho('\033[33mWelcome Register your study hours here\033[m')
+    else:
+        cabeçalho("\033[33mHi, it's good to have you here again.\033[m")
+    menuList(mainMenu)
+    opc = int(input(f'\nSelect Option: '))
+
+
+    menu( registoGeral )
     for key in registoGeral.keys():
         keylist.append(key)
+    
     
     try :        
         opc = int(input(f'Select Option: '))

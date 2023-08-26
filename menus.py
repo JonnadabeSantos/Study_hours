@@ -6,8 +6,14 @@ def cabeçalho( txt ):
     print(txt.center(40) )
     linha()
 
+
+def menuList(lista):    
+    for ind, inf in enumerate(lista):
+        print(f'{ ( ind + 1 ):>2} - {inf}')
+
+
 def menu(dict):
-    cabeçalho('Main Menu')
+    cabeçalho('Linguage Select')
     c = 1
     for key, value in dict.items():
         print(f'{c:>2} - {key:<24}{value:>4} Hours')
