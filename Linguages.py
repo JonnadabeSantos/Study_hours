@@ -1,28 +1,20 @@
 from time import sleep
 from hours import *
 
-linguages = {'Python': 3580, 'Java Script': 0, 'ruby': 0,'Java': 0, 'C#': 56, 'SQL': 0, 'PHP': 200, 'C++': 0, 'Golang': 5}
+linguages = {'Python': 0, 'Java Script': 0, 'ruby': 0,'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0, 'Golang': 0}
 
 
 
 arq = 'Study_hours.txt'
 if not verificarArquivo(arq):
-    criarArquivo( arq, linguages)
-    regExiste = False
+    criarArquivo( arq, linguages)   
     registoGeral = arquivoExiste(arq)
 else:
     registoGeral = arquivoExiste(arq)
-    regExiste = True
-    print(registoGeral) 
+   
 
 while True:
-    if regExiste:
-        print(f'yes {registoGeral}')
-        menu( registoGeral )
-    else:
-        menu( registoGeral )
-        print(f'not {registoGeral}')
-
+    menu( registoGeral )
     try :
         opc = int(input(f'Select Option: '))
         

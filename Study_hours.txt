@@ -1,1 +1,1 @@
-{'Python': 3580, 'Java Script': 0, 'ruby': 0, 'Java': 0, 'C#': 56, 'SQL': 0, 'PHP': 200, 'C++': 0, 'Golang': 5}
+{'Python': 0, 'Java Script': 0, 'ruby': 0, 'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0, 'Golang': 0}
