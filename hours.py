@@ -1,6 +1,6 @@
-from dados import *
+from menus import *
 
-def arquivoExiste(arquivo):
+def verificarArquivo(arquivo):
     try:        
         with open(arquivo, 'rt') as a: # 'rt vai ler um arquivo de texto 
             a.close() # fecha o arquivo
@@ -23,29 +23,16 @@ def criarArquivo(nome,dici=''):
         else:
             
             print(f'Arquivo  " {nome} " criado com sucesso!')
-
-
     finally:
         a.close()
 
 
-# def arquivoExiste(nome):
-#     try:
-#         a = open(nome, 'rt')
-#     except:
-#         print('houve um ERRO na existência do arquivo!')
-#     else:
-#         a.write()
-
-
-
-def lerArquivo(nome):
+def arquivoExiste(nome):
     try:
         a = open(nome, 'rt')
     except:
         print('Erro ao ler o arquivo')
     else:     
-        cabeçalho('Hours Studied')        
         for linha in a:            
             dado = linha.split(',')
                
@@ -58,12 +45,11 @@ def lerArquivo(nome):
         registroGeral = {}  
         for separar in dado:
             keyValue = separar.split(':')
-            registroGeral[keyValue[0]] = keyValue[1]                 
+            registroGeral[keyValue[0]] = keyValue[1]
         
-        print(registroGeral)
-    
-    finally:
         a.close()
+        return registroGeral    
+    
 
 
 def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
