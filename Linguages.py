@@ -18,9 +18,9 @@ else:
 while True:
     if regExiste:
         print(f'yes {registoGeral}')
-        menu( linguages )
+        menu( registoGeral )
     else:
-        menu( linguages )
+        menu( registoGeral )
         print(f'not {registoGeral}')
 
     try :
