@@ -6,13 +6,22 @@ def cabeçalho( txt ):
     print(txt.center(40) )
     linha()
 
+
+def menuList(lista):
+    cabeçalho('Main Menu') 
+    for ind, inf in enumerate(lista):
+        print(f'{ ( ind + 1 ):>2} - {inf}')
+
+
 def menu(dict):
-    cabeçalho('Main Menu')
+    cabeçalho('Linguage Select')
     c = 1
     for key, value in dict.items():
         print(f'{c:>2} - {key:<24}{value:>4} Hours')
         c += 1
-    print(f'{c:>2} - Sair')    
+    print(f'{c:>} - Return to main menu')
+    c += 1
+    print(f'{c:>2} - Exit')    
     linha()
 
 def cadastrar():
