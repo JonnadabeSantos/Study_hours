@@ -34,9 +34,11 @@ def arquivoExiste(nome):
         print('Erro ao ler o arquivo')
     else:     
         for linha in a:            
-            dado = linha.split(',')
+            dado = linha.split('],')
                
         for limp in range(len(dado)):
+            dado[limp] = dado[limp].replace("]","")
+            dado[limp] = dado[limp].replace("[","")
             dado[limp] = dado[limp].replace("{","")
             dado[limp] = dado[limp].replace("}","")
             dado[limp] = dado[limp].replace("'","")
@@ -45,7 +47,8 @@ def arquivoExiste(nome):
         registroGeral = {}  
         for separar in dado:
             keyValue = separar.split(':')
-            registroGeral[keyValue[0]] = keyValue[1]
+            print(keyValue)
+            # registroGeral[keyValue[0]] = keyValue[1]
         
         a.close()
         return registroGeral  
