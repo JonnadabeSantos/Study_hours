@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta,time
-import time as tempo
+
 
 
 def somar( fist, * number ):    
@@ -31,11 +31,17 @@ def hourMinute( hour, minute ):
     return hour
 
 
-def studyTime():
-    
-    now = timedelta(9,25,5,25)
-    print(type(now))
-    print(now)
+def studyTime( * lista ):
+    hora = minuto = 0
+    for item in lista:
+        for ind, val in enumerate(item):
+            if ind == 0:
+                hora = val
+            else:
+                minuto = val
+
+    print(f'A hora é {hora} e os minutos são {minuto}')
+            
 
     
     # datet = datetime.strftime(now,'%H:%M')
@@ -67,7 +73,7 @@ def studyTime():
 
 # print(type(studyTime()), studyTime())
 # print(studyTime())
-studyTime()
+# studyTime()
 
 a=20
 b=2

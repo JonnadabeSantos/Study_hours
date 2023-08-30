@@ -1,4 +1,5 @@
 from menus import *
+from Calculator import *
 
 def verificarArquivo(arquivo):
     try:        
@@ -43,12 +44,15 @@ def arquivoExiste(nome):
             dado[limp] = dado[limp].replace("}","")
             dado[limp] = dado[limp].replace("'","")
             dado[limp] = dado[limp].replace(" ","")
-        
+
         registroGeral = {}  
         for separar in dado:
             keyValue = separar.split(':')
-            print(keyValue)
-            # registroGeral[keyValue[0]] = keyValue[1]
+            horario = []
+            horario.append(keyValue[1])
+            horario.append(keyValue[2])
+            registroGeral[keyValue[0]] = horario
+           
         
         a.close()
         return registroGeral  
