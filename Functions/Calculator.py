@@ -23,12 +23,23 @@ def division( fist, * number ):
     for div in number:
         fist /= div
     return fist
+            
 
 def hourMinute( hora, minuto ):
-    tempo = timedelta( days = 0, hours = hora, minutes = minuto )
+    tempo = timedelta( hours = hora, minutes = minuto )
     tempo += timedelta( hours = int(input('Hora: ')), minutes = int(input('Minutos: ')) )
-    print(tempo)
+    
+    data = datetime.now().date()
+    resettime = time(0,0)
+    data = datetime.combine( data, resettime )
+ 
+    data += tempo
 
+    Hora = data.hour
+    Minuto = data.minute
+    return Hora, Minuto
+    
+    
 def studyTime( * lista ):
     hora = minuto = 0
     for item in lista:
@@ -38,11 +49,8 @@ def studyTime( * lista ):
             else:
                 minuto = int(val)
 
-    hourMinute( hora, minuto )
-            
-
-    
-    
+    horaMinuto = hourMinute( hora, minuto )
+    return f'{horaMinuto[0]}:{horaMinuto[1]}'
 
     # datet = datetime.strftime(now,'%H:%M')
     # now = timedelta(hours=1,minutes=5)

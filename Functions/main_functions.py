@@ -1,5 +1,5 @@
-from menus import *
-from Calculator import *
+from Functions.Calculator import *
+from Functions.menus import *
 
 def verificarArquivo(arquivo):
     try:        
