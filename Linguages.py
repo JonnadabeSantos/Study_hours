@@ -95,7 +95,7 @@ while True:
                                                 print('\n\033[31m\nERROR ! Invalid value \033[m')
                                                 sleep(1)
                                             else: 
-                                                # studyTime(registoGeral[keylist[ opc - 1] ])
+                                                studyTime(registoGeral[keylist[ opc - 1] ])
                                                 # registoGeral[ keylist[ opc -1 ] ] = ( int(registoGeral[ keylist[ opc -1 ] ]) + addhours )
                                                 # registoGeral[[keylist[ opc -1 ]] = int(registoGeral[[keylist[ opc -1 ]]) + int(input('Enter the number of hours: '))
                                                 # updateDict( arq,registoGeral )

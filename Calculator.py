@@ -24,26 +24,26 @@ def division( fist, * number ):
         fist /= div
     return fist
 
-def hourMinute( hour, minute ):
-    # math.floor() arredonda p baixo
-    #math.ceil() arredonda p cima
-    hour += round( (minute / 60) , 1 )
-    return hour
-
+def hourMinute( hora, minuto ):
+    tempo = timedelta( days = 0, hours = hora, minutes = minuto )
+    tempo += timedelta( hours = int(input('Hora: ')), minutes = int(input('Minutos: ')) )
+    print(tempo)
 
 def studyTime( * lista ):
     hora = minuto = 0
     for item in lista:
         for ind, val in enumerate(item):
             if ind == 0:
-                hora = val
+                hora = int(val)
             else:
-                minuto = val
+                minuto = int(val)
 
-    print(f'A hora é {hora} e os minutos são {minuto}')
+    hourMinute( hora, minuto )
             
 
     
+    
+
     # datet = datetime.strftime(now,'%H:%M')
     # now = timedelta(hours=1,minutes=5)
 
