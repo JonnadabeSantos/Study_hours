@@ -1,7 +1,7 @@
 from Functions.main_functions import *
 from time import sleep
 
-linguages = {'Python': [ '15:21' ], 'Java Script': [ '0:0' ], 'Ruby': [ '0:0' ], 'Java': [ '0:0' ], 'C#': [ '0:0' ], 'SQL': [ '0:0' ], 'PHP': [ '0:0' ], 'C++': [ '0:0' ], 'Golang': [ '0:0' ], 'CSS': [ '0:0' ]}
+linguages = {'Python': '15:21', 'Java Script': '0:0', 'Ruby': '0:0', 'Java': '0:0', 'C#': '0:0', 'SQL': '0:0', 'PHP': '0:0', 'C++': '0:0', 'Golang': '0:0', 'CSS': '0:0' }
 EndProgram = returnMainMenu = False
 
 
@@ -10,9 +10,11 @@ arq = 'Study_hours.txt'
 if not verificarArquivo(arq):
     criarArquivo( arq, linguages)   
     registoGeral = arquivoExiste(arq)
+    print(f'{registoGeral} N')
     welcome = False
 else:
     registoGeral = arquivoExiste(arq)
+    print(f'{registoGeral} Y')
     welcome = True
    
 if not welcome:
@@ -95,6 +97,7 @@ while True:
                                                 print('\n\033[31m\nERROR ! Invalid value \033[m')
                                                 sleep(1)
                                             else: 
+                                                print(registoGeral[keylist[ opc - 1]])
                                                 x1 = studyTime(registoGeral[keylist[ opc - 1] ])
                                                 print(x1)
                                                 # registoGeral[ keylist[ opc -1 ] ] = ( int(registoGeral[ keylist[ opc -1 ] ]) + addhours )

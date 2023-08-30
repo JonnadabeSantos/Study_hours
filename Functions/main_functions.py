@@ -35,23 +35,21 @@ def arquivoExiste(nome):
         print('Erro ao ler o arquivo')
     else:     
         for linha in a:            
-            dado = linha.split('],')
+            dado = linha.split("',")
                
         for limp in range(len(dado)):
-            dado[limp] = dado[limp].replace("]","")
-            dado[limp] = dado[limp].replace("[","")
             dado[limp] = dado[limp].replace("{","")
             dado[limp] = dado[limp].replace("}","")
             dado[limp] = dado[limp].replace("'","")
             dado[limp] = dado[limp].replace(" ","")
 
+        print(dado)
         registroGeral = {}  
+
         for separar in dado:
             keyValue = separar.split(':')
-            horario = []
-            horario.append(keyValue[1])
-            horario.append(keyValue[2])
-            registroGeral[keyValue[0]] = horario
+                       
+            registroGeral[keyValue[0]] = f'{keyValue[1]}:{keyValue[2]}'
            
         
         a.close()

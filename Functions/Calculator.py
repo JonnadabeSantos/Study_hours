@@ -40,17 +40,21 @@ def hourMinute( hora, minuto ):
     return Hora, Minuto
     
     
-def studyTime( * lista ):
+def studyTime( lista ):
     hora = minuto = 0
-    for item in lista:
-        for ind, val in enumerate(item):
-            if ind == 0:
-                hora = int(val)
-            else:
-                minuto = int(val)
-
+    separar = lista.split(':')
+    print(separar)
+    for ind, hm in enumerate(separar):
+        if ind == 0:
+            hora = int(hm)
+        else:
+            minuto = int(hm)
+    print(hora)
+    print(minuto)
     horaMinuto = hourMinute( hora, minuto )
+
     return f'{horaMinuto[0]}:{horaMinuto[1]}'
+
 
     # datet = datetime.strftime(now,'%H:%M')
     # now = timedelta(hours=1,minutes=5)
