@@ -1,7 +1,7 @@
 from Functions.main_functions import *
 from time import sleep
 
-linguages = {'Python': '48:21', 'Java Script': '0:0', 'Ruby': '0:0', 'Java': '0:0', 'C#': '0:0', 'SQL': '0:0', 'PHP': '0:0', 'C++': '0:0', 'Golang': '0:0', 'CSS': '0:0' }
+linguages = {'Python': '0', 'Java Script': '0', 'Ruby': '0', 'Java': '0', 'C#': '0', 'SQL': '0', 'PHP': '0', 'C++': '0', 'Golang': '0', 'CSS': '0' }
 EndProgram = returnMainMenu = False
 
 
@@ -99,7 +99,18 @@ while True:
                                                 registoGeral[ keylist[ opc -1 ] ] = addTime
                                                 # # registoGeral[[keylist[ opc -1 ]] = int(registoGeral[[keylist[ opc -1 ]]) + int(input('Enter the number of hours: '))
                                                 updateDict( arq,registoGeral )
-                                                print(f'Successfully adding {addhours} hours and {addminite} minute to your {keylist[ opc - 1 ]} studies')
+
+                                                
+                                                if addhours == 0 and addminite != 0:
+                                                    print(f'Successfully adding {addminite} minute(s) to your {keylist[ opc - 1 ]} studies')
+                                               
+                                                elif addhours != 0 and addminite == 0:
+                                                    print(f'Successfully adding {addhours} hour(s) to your {keylist[ opc - 1 ]} studies')
+                                                
+                                                elif addhours != 0 and addminite != 0:
+                                                    print(f'Successfully adding {addhours} hour(s) and {addminite} minute(s) to your {keylist[ opc - 1 ]} studies')
+                                                else:
+                                                    print(f'Sorry ! but no hour(s) or minute(s) was added to your {keylist[ opc - 1 ]} study')
 
                                                 
                                                 while True:                     

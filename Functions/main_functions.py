@@ -47,9 +47,11 @@ def arquivoExiste(nome):
 
         for separar in dado:
             keyValue = separar.split(':')
-                       
-            registroGeral[keyValue[0]] = f'{keyValue[1]}:{keyValue[2]}'
-           
+            
+            if len(keyValue) == 3:
+                registroGeral[keyValue[0]] = f'{keyValue[1]}:{keyValue[2]}'
+            else:
+                registroGeral[keyValue[0]] = f'{keyValue[1]}'
         
         a.close()
         return registroGeral  
