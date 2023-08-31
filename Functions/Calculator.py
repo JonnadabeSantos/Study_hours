@@ -24,47 +24,39 @@ def division( fist, * number ):
         fist /= div
     return fist
             
-
-def hourMinute( fist, second, hora, minuto ):
-    tempo = timedelta( hours = hora, minutes = minuto )
-    tempo += timedelta( hours = fist, minutes = second )
-    
-    data = datetime.now().date()
-    resettime = time(0,0)
-    data = datetime.combine( data, resettime )
- 
-    data += tempo
-
-    Hora = data.hour
-    Minuto = data.minute
-    return Hora, Minuto
-    
     
 def studyTime( fist, second, lista ):
-    hora = minuto = 0
-    x = str(lista)
-    print(x)
-    print()
-    separar = x.split(':')
-    for ind, hm in enumerate(separar):
+    fistHora = fistMinuto = dia = 0
+    separar = lista.split(':')
+      
+    for ind, horaMinuto in enumerate(separar):
+        horaMinuto = int(horaMinuto)        
         if ind == 0:
-            hora = int(hm)
+            while horaMinuto >= 24:
+                dia += 1
+                horaMinuto -= 24
+            fistHora = horaMinuto
         else:
-            minuto = int(hm)
+            fistMinuto = horaMinuto
    
-    tempo = timedelta( hours = hora, minutes = minuto )
+    tempo = timedelta( days = dia, hours = fistHora, minutes = fistMinuto )
     tempo += timedelta( hours = fist, minutes = second )
-    
+    dia = tempo.days
+     
     data = datetime.now().date()
     resettime = time(0,0)
     data = datetime.combine( data, resettime )
  
     data += tempo
-
-    Hora = data.hour
+    Hora = data.hour + ( dia * 24 )
     Minuto = data.minute
-
-    return f'{Hora}:{Minuto}'
+    
+    if Minuto == 0:
+        return f'{Hora}'
+    
+    else:
+        return f'{Hora}:{Minuto}'
+ 
 
 
 

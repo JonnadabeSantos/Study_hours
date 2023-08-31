@@ -1,7 +1,7 @@
 from Functions.main_functions import *
 from time import sleep
 
-linguages = {'Python': '15:21', 'Java Script': '0:0', 'Ruby': '0:0', 'Java': '0:0', 'C#': '0:0', 'SQL': '0:0', 'PHP': '0:0', 'C++': '0:0', 'Golang': '0:0', 'CSS': '0:0' }
+linguages = {'Python': '48:21', 'Java Script': '0:0', 'Ruby': '0:0', 'Java': '0:0', 'C#': '0:0', 'SQL': '0:0', 'PHP': '0:0', 'C++': '0:0', 'Golang': '0:0', 'CSS': '0:0' }
 EndProgram = returnMainMenu = False
 
 
@@ -88,8 +88,8 @@ while True:
                                                 if key == keylist[ opc -1 ]:                                    
                                                     print(f'{key:<33}{value} Hours')
                                             try:
-                                                addhours = int(input('Enter the number of hours: #'))
-                                                addminite = int(input('Enter the number of minutes: #'))
+                                                addhours = int(input('Enter the number of hours: '))
+                                                addminite = int(input('Enter the number of minutes: '))
                                                 addTime = studyTime( addhours, addminite, registoGeral[keylist[ opc - 1] ])
 
                                             except(ValueError):

@@ -1,9 +1,0 @@
-from datetime import datetime, timedelta
-
-# Crie um objeto timedelta com o intervalo de tempo desejado
-intervalo_de_tempo = timedelta(days=1, hours=5, minutes=30)
-
-print(intervalo_de_tempo)
-print(intervalo_de_tempo.days + 2)
-print(type(intervalo_de_tempo))
-print()
