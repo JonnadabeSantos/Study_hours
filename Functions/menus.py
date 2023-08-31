@@ -17,7 +17,7 @@ def menu(dict):
     cabeçalho('Linguage Select')
     c = 1
     for key, value in dict.items():
-        print(f'{c:>2} - {key:<24}{value:>4} Hours')
+        print(f'{c:>2} - {key:<24}{value:>8} Hours')
         c += 1
     print(f'{c:>} - Return to main menu')
     c += 1

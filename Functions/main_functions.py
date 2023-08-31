@@ -1,4 +1,5 @@
-from menus import *
+from Functions.Calculator import *
+from Functions.menus import *
 
 def verificarArquivo(arquivo):
     try:        
@@ -34,18 +35,23 @@ def arquivoExiste(nome):
         print('Erro ao ler o arquivo')
     else:     
         for linha in a:            
-            dado = linha.split(',')
+            dado = linha.split("',")
                
         for limp in range(len(dado)):
             dado[limp] = dado[limp].replace("{","")
             dado[limp] = dado[limp].replace("}","")
             dado[limp] = dado[limp].replace("'","")
             dado[limp] = dado[limp].replace(" ","")
-        
+
         registroGeral = {}  
+
         for separar in dado:
             keyValue = separar.split(':')
-            registroGeral[keyValue[0]] = keyValue[1]
+            
+            if len(keyValue) == 3:
+                registroGeral[keyValue[0]] = f'{keyValue[1]}:{keyValue[2]}'
+            else:
+                registroGeral[keyValue[0]] = f'{keyValue[1]}'
         
         a.close()
         return registroGeral  

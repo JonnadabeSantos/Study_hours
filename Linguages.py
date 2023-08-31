@@ -1,7 +1,7 @@
+from Functions.main_functions import *
 from time import sleep
-from hours import *
 
-linguages = {'Python': 0, 'Java Script': 0, 'ruby': 0,'Java': 0, 'C#': 0, 'SQL': 0, 'PHP': 0, 'C++': 0, 'Golang': 0 ,'CSS':0}
+linguages = {'Python': '0', 'Java Script': '0', 'Ruby': '0', 'Java': '0', 'C#': '0', 'SQL': '0', 'PHP': '0', 'C++': '0', 'Golang': '0', 'CSS': '0' }
 EndProgram = returnMainMenu = False
 
 
@@ -20,6 +20,8 @@ if not welcome:
 else:
     cabeçalho("\033[33mHi, it's good to have you here again.\033[m")
 
+
+
 while True:
     
     if EndProgram:
@@ -35,6 +37,7 @@ while True:
         print('\n\033[31mERROR Select a valid option!\033[m')
         sleep(1)
     else:
+
         if menuSelect == 1:
 
             while True:
@@ -47,16 +50,17 @@ while True:
                 keylist = []
                 for key in registoGeral.keys():
                     keylist.append(key)
-                
-                
+                                
                 try :        
                     opc = int(input(f'Select Option: '))
                 except:    
                     print('\033[31mERROR ! Digite um valor válido !!!\n\033[m')
                     sleep(1)
                 else:    
+                    
                     if len( linguages ) + 2 >= opc > 0:
-                        if opc == 1:
+                        
+                        if opc == 1: # Python
                             
                             while True:
                                 
@@ -65,7 +69,7 @@ while True:
 
                                 try:
                                     linha()
-                                    cabeçalho('Python language selected !')
+                                    cabeçalho(f'{keylist[ opc -1 ]} language selected !')
                                     resp = input(f'\nWant to add hours {keylist[ opc -1 ]} language? [Y/N]?: ') [0]
                                 except:
                                     print('\n\033[31m\nERROR ! Invalid value \033[m')
@@ -85,15 +89,30 @@ while True:
                                                     print(f'{key:<33}{value} Hours')
                                             try:
                                                 addhours = int(input('Enter the number of hours: '))
-                                            except(ValueError):
-                                                print('\n\033[31m\nERROR ! Invalid value \033[m')
-                                                sleep(1)
-                                            else:                                                
-                                                registoGeral[ keylist[ opc -1 ] ] = ( int(registoGeral[ keylist[ opc -1 ] ]) + addhours )
-                                                # registoGeral[[keylist[ opc -1 ]] = int(registoGeral[[keylist[ opc -1 ]]) + int(input('Enter the number of hours: '))
-                                                updateDict( arq,registoGeral )
-                                                print(f'Successfully adding {addhours} hours to your {keylist[ opc - 1 ]} studies')
+                                                addminite = int(input('Enter the number of minutes: '))
+                                                addTime = studyTime( addhours, addminite, registoGeral[keylist[ opc - 1] ])
 
+                                            except(ValueError):
+                                                print('\n\033[31m\nERROR ! Invalid value*** \033[m')
+                                                sleep(1)
+                                            else: 
+                                                registoGeral[ keylist[ opc -1 ] ] = addTime
+                                                # # registoGeral[[keylist[ opc -1 ]] = int(registoGeral[[keylist[ opc -1 ]]) + int(input('Enter the number of hours: '))
+                                                updateDict( arq,registoGeral )
+
+                                                
+                                                if addhours == 0 and addminite != 0:
+                                                    print(f'Successfully adding {addminite} minute(s) to your {keylist[ opc - 1 ]} studies')
+                                               
+                                                elif addhours != 0 and addminite == 0:
+                                                    print(f'Successfully adding {addhours} hour(s) to your {keylist[ opc - 1 ]} studies')
+                                                
+                                                elif addhours != 0 and addminite != 0:
+                                                    print(f'Successfully adding {addhours} hour(s) and {addminite} minute(s) to your {keylist[ opc - 1 ]} studies')
+                                                else:
+                                                    print(f'Sorry ! but no hour(s) or minute(s) was added to your {keylist[ opc - 1 ]} study')
+
+                                                
                                                 while True:                     
                                                     try:
                                                         returned = input('\nReturn to main menu [Y/N]: ') [0]
@@ -128,15 +147,108 @@ while True:
                                                     break
                                                 else:
                                                     print('\nIvalid Option ! Type YES or NO')
-                                                    sleep(1)   
-                                                
+                                                    sleep(1)                                                   
 
                                     else:
                                         print('\nIvalid Option ! Type YES or NO')
                                         sleep(1)                                
                                                 
+                        
+                       
+                       
                         elif opc == 2:
-                           pass
+                           
+
+
+
+                            while True:
+                                
+                                if EndProgram or returnMainMenu:
+                                    break
+
+                                try:
+                                    linha()
+                                    cabeçalho(f'{keylist[ opc -1 ]} language selected !')
+                                    resp = input(f'\nWant to add hours {keylist[ opc -1 ]} language? [Y/N]?: ') [0]
+                                except:
+                                    print('\n\033[31m\nERROR ! Invalid value \033[m')
+                                    sleep(1)
+                                else:
+                                    if resp in 'Yy':
+                                        while True:
+
+                                            if EndProgram or returnMainMenu:
+                                                break
+
+                                            print()                    
+                                            print()                    
+                                            cabeçalho(f'Adding hours to {keylist[ opc -1 ]} studies')
+                                            for key, value in registoGeral.items():
+                                                if key == keylist[ opc -1 ]:                                    
+                                                    print(f'{key:<33}{value} Hours')
+                                            try:
+                                                addhours = int(input('Enter the number of hours: '))
+                                            except(ValueError):
+                                                print('\n\033[31m\nERROR ! Invalid value \033[m')
+                                                sleep(1)
+                                            else:                                                
+                                                registoGeral[ keylist[ opc -1 ] ] = ( int(registoGeral[ keylist[ opc -1 ] ]) + addhours )
+                                                # registoGeral[[keylist[ opc -1 ]] = int(registoGeral[[keylist[ opc -1 ]]) + int(input('Enter the number of hours: '))
+                                                updateDict( arq,registoGeral )
+                                                print(f'Successfully adding {addhours} hours to your {keylist[ opc - 1 ]} studies')
+
+                                                
+                                                while True:                     
+                                                    try:
+                                                        returned = input('\nReturn to main menu [Y/N]: ') [0]
+                                                    except:
+                                                        print('\033[31m\nERROR ! Invalid value \033[m')
+                                                    else:
+                                                        if returned in 'Yy':
+                                                            returnMainMenu = True
+                                                            break
+                                                        elif returned in 'Nn':
+
+                                                            EndProgram = True # used to end all whiles
+                                                            break
+                                                        else:
+                                                            print('\nIvalid Option ! Type YES or NO')
+                                                            sleep(1)                                              
+                                                                                               
+
+                                    elif resp in 'Nn':
+                                        while True:                     
+                                            try:
+                                                returned = input('Return to main menu [Y/N]: ') [0]
+                                            except:
+                                                print('\033[31m\nERROR ! Invalid value \033[m')
+                                            else:
+                                                if returned in 'Yy':
+                                                    returnMainMenu = True
+                                                    break
+                                                elif returned in 'Nn':
+
+                                                    EndProgram = True # used to end all whiles
+                                                    break
+                                                else:
+                                                    print('\nIvalid Option ! Type YES or NO')
+                                                    sleep(1)                                                   
+
+                                    else:
+                                        print('\nIvalid Option ! Type YES or NO')
+                                        sleep(1)
+
+
+
+
+
+
+
+
+
+
+
+
 
                         elif opc == len( linguages ) + 1:
                             break
@@ -144,13 +256,15 @@ while True:
                         elif opc == len( linguages ) + 2:
                             EndProgram = True                            
                             break
-                        else:
-                            print('e agora ?')
+                     
+
+                    
                     else:
-                        print('\n\033[33mNúmero Inválido Type it again !!!\n\033[m')
-                        sleep(1)
+                        print(f'\n\033[33mInvalid Number !! a number between 1 and {len(mainMenu) + 1}\n\033[m')
+                        sleep(2)
                 
                 
+        
         
         elif menuSelect == 2:
             print('\nStatistic')
@@ -160,10 +274,8 @@ while True:
             EndProgram = True            
 
         else:
-            print('\nInvalid Number!!')
-            sleep(1)
-
-    
+            print(f'\n\033[33mInvalid Number !! a number between 1 and { len(mainMenu) }\n\033[m')
+            sleep(2)
 
 
 
