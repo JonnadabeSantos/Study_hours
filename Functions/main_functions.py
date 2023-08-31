@@ -43,7 +43,6 @@ def arquivoExiste(nome):
             dado[limp] = dado[limp].replace("'","")
             dado[limp] = dado[limp].replace(" ","")
 
-        print(dado)
         registroGeral = {}  
 
         for separar in dado:

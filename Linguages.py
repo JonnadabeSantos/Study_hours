@@ -10,11 +10,9 @@ arq = 'Study_hours.txt'
 if not verificarArquivo(arq):
     criarArquivo( arq, linguages)   
     registoGeral = arquivoExiste(arq)
-    print(f'{registoGeral} N')
     welcome = False
 else:
     registoGeral = arquivoExiste(arq)
-    print(f'{registoGeral} Y')
     welcome = True
    
 if not welcome:
@@ -90,20 +88,18 @@ while True:
                                                 if key == keylist[ opc -1 ]:                                    
                                                     print(f'{key:<33}{value} Hours')
                                             try:
-                                                addhours = int(input('Enter the number of hours: '))
-                                                addminite = int(input('Enter the number of minutes: '))
+                                                addhours = int(input('Enter the number of hours: #'))
+                                                addminite = int(input('Enter the number of minutes: #'))
+                                                addTime = studyTime( addhours, addminite, registoGeral[keylist[ opc - 1] ])
 
                                             except(ValueError):
-                                                print('\n\033[31m\nERROR ! Invalid value \033[m')
+                                                print('\n\033[31m\nERROR ! Invalid value*** \033[m')
                                                 sleep(1)
                                             else: 
-                                                print(registoGeral[keylist[ opc - 1]])
-                                                x1 = studyTime(registoGeral[keylist[ opc - 1] ])
-                                                print(x1)
-                                                # registoGeral[ keylist[ opc -1 ] ] = ( int(registoGeral[ keylist[ opc -1 ] ]) + addhours )
-                                                # registoGeral[[keylist[ opc -1 ]] = int(registoGeral[[keylist[ opc -1 ]]) + int(input('Enter the number of hours: '))
-                                                # updateDict( arq,registoGeral )
-                                                # print(f'Successfully adding {addhours} hours to your {keylist[ opc - 1 ]} studies')
+                                                registoGeral[ keylist[ opc -1 ] ] = addTime
+                                                # # registoGeral[[keylist[ opc -1 ]] = int(registoGeral[[keylist[ opc -1 ]]) + int(input('Enter the number of hours: '))
+                                                updateDict( arq,registoGeral )
+                                                print(f'Successfully adding {addhours} hours and {addminite} minute to your {keylist[ opc - 1 ]} studies')
 
                                                 
                                                 while True:                     
