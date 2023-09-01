@@ -11,7 +11,7 @@ def verificarArquivo(arquivo):
         return True
  
 
-def criarArquivo(nome,dici=''):
+def criarArquivo(nome,dici):
     try:
         a = open(nome, 'wt+')
     except:
@@ -89,9 +89,12 @@ def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
 
 def register_hours( hour, minute, hourMinute ):    
     data = datetime.now().date()
-    if hour == 0:
+    if ( hour and minute ) != 0:
+        return f'{data} added {hour} hour(s) and {minute} minute(s) your current study time is {hourMinute}'
+   
+    elif hour == 0:
         return f'{data} added {minute} minute(s) your current study time is {hourMinute}'
+
     elif minute == 0:
         return f'{data} added {hour} hour(s) your current study time is {hourMinute}'
-    else:
-        return f'{data} added {hour} hour(s) and {minute} minute(s) your current study time is {hourMinute}'
+    

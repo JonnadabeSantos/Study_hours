@@ -1,10 +1,9 @@
 def linha( aling = 40 ):
-    print( '-' * aling )
+    return ('-' * aling )
 
 def cabeçalho( txt, align = 40 ):
-    linha(align)
-    print(txt.center(align) )
-    linha(align)
+    cab = f'{ txt.center(align) }'
+    return f'{linha()}\n{cab}\n{linha()}\n'    
 
 
 def menuList(lista):

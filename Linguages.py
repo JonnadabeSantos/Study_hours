@@ -112,7 +112,10 @@ while True:
 
                                                 file_linguage = f'Fake_bank/Hours_linguages/{keylist[ opc - 1]}.txt'                                            
                                                 if not verificarArquivo(file_linguage) and ( addhours and addminite ) != 0:
-                                                    criarArquivo( file_linguage, dici= cabeçalho(f'python language time recording'))
+                                                    dici = f'''{cabeçalho(f'python language time recording')}'''
+                                                    print(dici)
+                                                    # dici = 'python language time recording'
+                                                    criarArquivo( file_linguage, dici)
                                                     print(register_hours( addhours, addhours, addTime ))
                                                 
 
