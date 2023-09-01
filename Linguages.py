@@ -97,22 +97,25 @@ while True:
                                                 sleep(1)
                                             else: 
                                                 registoGeral[ keylist[ opc -1 ] ] = addTime
-                                                # # registoGeral[[keylist[ opc -1 ]] = int(registoGeral[[keylist[ opc -1 ]]) + int(input('Enter the number of hours: '))
                                                 updateDict( arq,registoGeral )
-
-                                                
+                                                                                                
                                                 if addhours == 0 and addminite != 0:
                                                     print(f'Successfully adding {addminite} minute(s) to your {keylist[ opc - 1 ]} studies')
                                                
                                                 elif addhours != 0 and addminite == 0:
                                                     print(f'Successfully adding {addhours} hour(s) to your {keylist[ opc - 1 ]} studies')
                                                 
-                                                elif addhours != 0 and addminite != 0:
+                                                elif ( addhours and addminite ) != 0:
                                                     print(f'Successfully adding {addhours} hour(s) and {addminite} minute(s) to your {keylist[ opc - 1 ]} studies')
                                                 else:
                                                     print(f'Sorry ! but no hour(s) or minute(s) was added to your {keylist[ opc - 1 ]} study')
 
+                                                file_linguage = f'Fake_bank/Hours_linguages/{keylist[ opc - 1]}.txt'                                            
+                                                if not verificarArquivo(file_linguage) and ( addhours and addminite ) != 0:
+                                                    criarArquivo( file_linguage, dici= cabeçalho(f'python language time recording'))
+                                                    print(register_hours( addhours, addhours, addTime ))
                                                 
+
                                                 while True:                     
                                                     try:
                                                         returned = input('\nReturn to main menu [Y/N]: ') [0]

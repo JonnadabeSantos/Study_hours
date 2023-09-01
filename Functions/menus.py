@@ -1,10 +1,10 @@
-def linha():
-    print( '-' * 40 )
+def linha( aling = 40 ):
+    print( '-' * aling )
 
-def cabeçalho( txt ):
-    linha()
-    print(txt.center(40) )
-    linha()
+def cabeçalho( txt, align = 40 ):
+    linha(align)
+    print(txt.center(align) )
+    linha(align)
 
 
 def menuList(lista):

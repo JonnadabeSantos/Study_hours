@@ -9,7 +9,7 @@ def verificarArquivo(arquivo):
         return False
     else:
         return True
-    
+ 
 
 def criarArquivo(nome,dici=''):
     try:
@@ -85,3 +85,13 @@ def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
         else:
             print(f'Novo registro de {nome} adicionado!')
             a.close()
+
+
+def register_hours( hour, minute, hourMinute ):    
+    data = datetime.now().date()
+    if hour == 0:
+        return f'{data} added {minute} minute(s) your current study time is {hourMinute}'
+    elif minute == 0:
+        return f'{data} added {hour} hour(s) your current study time is {hourMinute}'
+    else:
+        return f'{data} added {hour} hour(s) and {minute} minute(s) your current study time is {hourMinute}'
