@@ -16,9 +16,9 @@ else:
     welcome = True
    
 if not welcome:
-    cabeçalho('\033[33mWelcome Register your study hours here\033[m')
+    print(cabeçalho('\033[33mWelcome Register your study hours here\033[m', 52, 'top' ))
 else:
-    cabeçalho("\033[33mHi, it's good to have you here again.\033[m")
+    print(cabeçalho("\033[33mHi, it's good to have you here again.\033[m", 54, 'top' ))
 
 
 
@@ -31,6 +31,7 @@ while True:
     
     try:
         mainMenu = ['Add Hours','Statisc','Exit']
+        print(cabeçalho('Main Menu') )
         menuList(mainMenu)        
         menuSelect = int(input(f'\nSelect Option: '))
     except:
@@ -45,7 +46,8 @@ while True:
                 returnMainMenu = False
                 if EndProgram:                    
                     break
-
+              
+                print(cabeçalho('Linguage Select'))
                 menu( registoGeral )
                 keylist = []
                 for key in registoGeral.keys():
@@ -68,9 +70,8 @@ while True:
                                     break
 
                                 try:
-                                    linha()
-                                    cabeçalho(f'{keylist[ opc -1 ]} language selected !')
-                                    resp = input(f'\nWant to add hours {keylist[ opc -1 ]} language? [Y/N]?: ') [0]
+                                    print(cabeçalho(f'{keylist[ opc -1 ]} language selected !'))
+                                    resp = input(f'Want to add hours {keylist[ opc -1 ]} language? [Y/N]?: ') [0]
                                 except:
                                     print('\n\033[31m\nERROR ! Invalid value \033[m')
                                     sleep(1)
@@ -83,7 +84,7 @@ while True:
 
                                             print()                    
                                             print()                    
-                                            cabeçalho(f'Adding hours to {keylist[ opc -1 ]} studies')
+                                            print(cabeçalho(f'Adding hours to {keylist[ opc -1 ]} studies'))
                                             for key, value in registoGeral.items():
                                                 if key == keylist[ opc -1 ]:                                    
                                                     print(f'{key:<33}{value} Hours')
