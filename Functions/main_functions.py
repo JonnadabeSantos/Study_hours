@@ -87,14 +87,26 @@ def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
             a.close()
 
 
-def register_hours( hour, minute, hourMinute ):    
-    data = datetime.now().date()
-    if ( hour and minute ) != 0:
-        return f'{data} added {hour} hour(s) and {minute} minute(s) your current study time is {hourMinute}'
-   
-    elif hour == 0:
-        return f'{data} added {minute} minute(s) your current study time is {hourMinute}'
+def register_hours( hour, minute, hourMinute, data = False ):    
+    dateNow = datetime.now().date()
 
-    elif minute == 0:
-        return f'{data} added {hour} hour(s) your current study time is {hourMinute}'
+    if ( hour and minute ) != 0:
+        if data:
+            return f'{dateNow} added {hour} hour(s) and {minute} minute(s) your current study time is {hourMinute} -'
+        else:
+            return f'Successfully adding {hour} hour(s) and {minute} minute(s) to your -'
     
+    else:   
+        if hour == 0 and minute != 0:
+            if data:
+                return f'{dateNow} added {minute} minute(s) your current study time is {hourMinute} -'
+            else:
+                return f'Successfully adding {minute} minute(s) to your -'
+
+        elif hour != 0 and minute == 0:
+            if data:
+                return f'{dateNow} added {hour} hour(s) your current study time is {hourMinute}-'
+            else:
+                return f'Successfully adding {hour} hour(s) to your -'
+        else:
+            return f'Sorry ! but no hour(s) or minute(s) was added to your -'

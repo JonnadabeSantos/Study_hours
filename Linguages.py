@@ -99,24 +99,13 @@ while True:
                                             else: 
                                                 registoGeral[ keylist[ opc -1 ] ] = addTime
                                                 updateDict( arq,registoGeral )
-                                                                                                
-                                                if addhours == 0 and addminite != 0:
-                                                    print(f'Successfully adding {addminite} minute(s) to your {keylist[ opc - 1 ]} studies')
-                                               
-                                                elif addhours != 0 and addminite == 0:
-                                                    print(f'Successfully adding {addhours} hour(s) to your {keylist[ opc - 1 ]} studies')
-                                                
-                                                elif ( addhours and addminite ) != 0:
-                                                    print(f'Successfully adding {addhours} hour(s) and {addminite} minute(s) to your {keylist[ opc - 1 ]} studies')
-                                                else:
-                                                    print(f'Sorry ! but no hour(s) or minute(s) was added to your {keylist[ opc - 1 ]} study')
+
+                                                print(f'{register_hours( addhours, addminite, addTime)} {keylist[ opc - 1 ]} studies')
+
 
                                                 file_linguage = f'Fake_bank/Hours_linguages/{keylist[ opc - 1]}.txt'                                            
-                                                if not verificarArquivo(file_linguage) and ( addhours and addminite ) != 0:
-                                                    dici = f'''{cabeçalho(f'python language time recording')}'''
-                                                    print(dici)
-                                                    # dici = 'python language time recording'
-                                                    criarArquivo( file_linguage, dici)
+                                                if not verificarArquivo(file_linguage) and ( addhours and addminite ) != 0:                                                 
+                                                    criarArquivo( file_linguage, cabeçalho(f"{keylist[ opc - 1]} language time recording", 90))
                                                     print(register_hours( addhours, addhours, addTime ))
                                                 
 

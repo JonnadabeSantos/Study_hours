@@ -1,17 +1,17 @@
-def linha( aling=45 ):
+def linha( aling = 45 ):
     return ('-' * aling )
 
-def cabeçalho( txt, align=45 , line = 'both' ):
-    cab = f'{ txt.center(align) }'
+def cabeçalho( txt, linhaCab = 45 , line = 'both' ):
+    cab = f'{ txt.center(linhaCab) }'
     
     if line == 'top':
-        return f'{linha()}\n{cab}'
+        return f'{linha(linhaCab)}\n{cab}'
     
     elif line == 'bottom':
-        return f'{cab}\n{linha()}'
+        return f'{cab}\n{linha(linhaCab)}'
 
     elif line == 'both':
-        return f'{linha()}\n{cab}\n{linha()}\n'
+        return f'{linha(linhaCab)}\n{cab}\n{linha(linhaCab)}\n'
     
     elif line == None:
         return cab
