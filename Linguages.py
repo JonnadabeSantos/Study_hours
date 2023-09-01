@@ -6,7 +6,7 @@ EndProgram = returnMainMenu = False
 
 
 
-arq = 'Study_hours.txt'
+arq = 'Fake_bank/Study_hours.txt'
 if not verificarArquivo(arq):
     criarArquivo( arq, linguages)   
     registoGeral = arquivoExiste(arq)
