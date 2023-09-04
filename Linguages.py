@@ -96,17 +96,25 @@ while True:
                                             except(ValueError):
                                                 print('\n\033[31m\nERROR ! Invalid value*** \033[m')
                                                 sleep(1)
-                                            else: 
+                                            else:                                                
+                                                print( f'{register_hours( addhours, addminite, addTime )} {keylist[ opc - 1 ]} studies' )
+                                                reg_now = f'{register_hours( addhours, addminite, addTime, True )} {keylist[ opc - 1 ]} studies'
+
                                                 registoGeral[ keylist[ opc -1 ] ] = addTime
                                                 updateDict( arq,registoGeral )
 
-                                                print(f'{register_hours( addhours, addminite, addTime)} {keylist[ opc - 1 ]} studies')
-
-
                                                 file_linguage = f'Fake_bank/Hours_linguages/{keylist[ opc - 1]}.txt'                                            
                                                 if not verificarArquivo(file_linguage) and ( addhours and addminite ) != 0:                                                 
-                                                    criarArquivo( file_linguage, cabeçalho(f"{keylist[ opc - 1]} language time recording", 90))
-                                                    print(register_hours( addhours, addhours, addTime ))
+                                                    criarArquivo( file_linguage, cabeçalho( f"{keylist[ opc - 1]} language time recording", 102 ) )
+                                                    
+                                                    if not 'Sorry' in reg_now:
+                                                        print('x')
+                                                        updateHours( file_linguage, reg_now )
+                                                else:
+                                                    if not 'Sorry' in reg_now:
+                                                        print('z')
+                                                        updateHours( file_linguage, reg_now )
+                                                    
                                                 
 
                                                 while True:                     

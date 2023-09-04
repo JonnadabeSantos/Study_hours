@@ -71,6 +71,21 @@ def updateDict( arq, dict ):
 
     
 
+def updateHours( arq, addDate ):
+    try:
+        a = open( arq, 'at')
+    except:
+        print('Houve um erro na abertura dos dados!')
+    else:
+        try:
+            a.write(f'{addDate}\n' )
+        except:
+            print('Houve um erro na escrita dos dados!')
+    finally:
+            a.close()
+
+
+
 
 def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
     try:
@@ -88,24 +103,24 @@ def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
 
 
 def register_hours( hour, minute, hourMinute, data = False ):    
-    dateNow = datetime.now().date()
+    dateNow = datetime.now().strftime('%d/%m/%Y')
 
     if ( hour and minute ) != 0:
         if data:
-            return f'{dateNow} added {hour} hour(s) and {minute} minute(s) your current study time is {hourMinute} -'
+            return f'{dateNow} added {hour} hour(s) and {minute} minute(s) your current study time is {hourMinute} Hour(s) -'
         else:
             return f'Successfully adding {hour} hour(s) and {minute} minute(s) to your -'
     
     else:   
         if hour == 0 and minute != 0:
             if data:
-                return f'{dateNow} added {minute} minute(s) your current study time is {hourMinute} -'
+                return f'{dateNow} added {minute} minute(s) your current study time is {hourMinute} Hour(s) -'
             else:
                 return f'Successfully adding {minute} minute(s) to your -'
 
         elif hour != 0 and minute == 0:
             if data:
-                return f'{dateNow} added {hour} hour(s) your current study time is {hourMinute}-'
+                return f'{dateNow} added {hour} hour(s) your current study time is {hourMinute} Hour(s) -'
             else:
                 return f'Successfully adding {hour} hour(s) to your -'
         else:
