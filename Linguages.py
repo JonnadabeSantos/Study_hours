@@ -1,7 +1,7 @@
 from Functions.main_functions import *
 from time import sleep
 
-linguages = {'Python': '0', 'Java Script': '0', 'Ruby': '0', 'Java': '0', 'C#': '0', 'SQL': '0', 'PHP': '0', 'C++': '0', 'Golang': '0', 'CSS': '0' }
+linguages = {'Python': '0', 'Java Script': '0', 'Java': '0', 'C#': '0', 'C++': '0', 'SQL': '0', 'PHP': '0', 'Typescript': '0', 'Golang': '0', }
 EndProgram = returnMainMenu = False
 
 
@@ -98,23 +98,24 @@ while True:
                                                 sleep(1)
                                             else:                                                
                                                 print( f'{register_hours( addhours, addminite, addTime )} {keylist[ opc - 1 ]} studies' )
-                                                reg_now = f'{register_hours( addhours, addminite, addTime, True )} {keylist[ opc - 1 ]} studies'
+                                                reg_now = f'{register_hours( addhours, addminite, addTime, True )} - {keylist[ opc - 1 ]} studies'
 
                                                 registoGeral[ keylist[ opc -1 ] ] = addTime
                                                 updateDict( arq,registoGeral )
 
                                                 file_linguage = f'Fake_bank/Hours_linguages/{keylist[ opc - 1]}.txt'                                            
-                                                if not verificarArquivo(file_linguage) and ( addhours and addminite ) != 0:                                                 
+                                                if not verificarArquivo(file_linguage) and ( addhours or addminite ) != 0:                                                 
                                                     criarArquivo( file_linguage, cabeçalho( f"{keylist[ opc - 1]} language time recording", 102 ) )
                                                     
                                                     if not 'Sorry' in reg_now:
                                                         print('x')
                                                         updateHours( file_linguage, reg_now )
+                                               
                                                 else:
                                                     if not 'Sorry' in reg_now:
                                                         print('z')
                                                         updateHours( file_linguage, reg_now )
-                                                    
+                                                        
                                                 
 
                                                 while True:                     
