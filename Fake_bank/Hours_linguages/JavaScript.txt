@@ -1,9 +1,0 @@
-------------------------------------------------------------------------------------------------------------------
-                                        JavaScript language time recording                                        
-------------------------------------------------------------------------------------------------------------------
-05/10/2023 - added   2 hour(s)                   -  your current study time is 9:24 Hour(s)   - JavaScript studies
-05/10/2023 - added   3 hour(s) and 20 minute(s)  -  your current study time is 12:44 Hour(s)  - JavaScript studies
-05/10/2023 - added  20 hour(s) and 30 minute(s)  -  your current study time is 33:14 Hour(s)  - JavaScript studies
-05/10/2023 - added                  2 minute(s)  -  your current study time is 33:16 Hour(s)  - JavaScript studies
-05/10/2023 - added   5 hour(s)                   -  your current study time is 38:16 Hour(s)  - JavaScript studies
-05/10/2023 - added                 30 minute(s)  -  your current study time is 38:46 Hour(s)  - JavaScript studies
