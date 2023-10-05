@@ -107,16 +107,18 @@ def register_hours( hour, minute, hourMinute, data = False ):
 
     if ( hour and minute ) != 0:
         if data:
-            string_horaMinuto = f'{hour} hour(s) and {minute} minute(s)'
+            string_horaMinuto = f'{hour:>2} hour(s) and {minute:>2} minute(s)'
             string_timestudy = f'your current study time is {hourMinute} Hour(s)'
-            return f'{dateNow}  added  {string_horaMinuto:<28} {string_timestudy:<41}'
+            return f'{dateNow} - added  {string_horaMinuto:<28}-  {string_timestudy:<41}'
         else:
             return f'Successfully adding {hour} hour(s) and {minute} minute(s) to your -'
     
     else:   
         if hour == 0 and minute != 0:
             if data:
-                return f'{dateNow} added {minute} minute(s) your current study time is {hourMinute} Hour(s) -'
+                string_minute = f'{minute:>3} minute(s)'
+                string_time = f'your current study time is {hourMinute} Hour(s)'
+                return f'{dateNow} - added  {string_minute:>27}  -  {string_time:<41}'
             else:
                 return f'Successfully adding {minute} minute(s) to your -'
 
