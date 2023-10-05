@@ -1,1 +1,1 @@
-{'Python': '225:23', 'JavaScript': '0', 'Java': '0', 'C#': '0', 'C++': '0', 'SQL': '0', 'PHP': '0', 'Typescript': '0', 'Golang': '0'}
+{'Python': '225:23', 'JavaScript': '38:46', 'Java': '12:22', 'C#': '5:20', 'C++': '0', 'SQL': '0', 'PHP': '0', 'Typescript': '0', 'Golang': '0'}
