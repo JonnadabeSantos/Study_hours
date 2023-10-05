@@ -1,45 +1,5 @@
-------------------------------------------------------------------------------------------------------
-                                    Python language time recording                                    
-------------------------------------------------------------------------------------------------------
-03/10/2023  added  1 hour(s) and 20 minute(s)   your current study time is 54:40 Hour(s)  - Python studies
-05/10/2023 added 20 minute(s) your current study time is 55 Hour(s) - - Python studies
-05/10/2023 - added  1 hour(s) and 20 minute(s)   your current study time is 56:20 Hour(s)  - Python studies
-05/10/2023 - added  20 hour(s) and 33 minute(s)  your current study time is 76:53 Hour(s)  - Python studies
-05/10/2023 - added  1 hour(s) and 20 minute(s)   - your current study time is 78:13 Hour(s)  - Python studies
-05/10/2023 - added  1 hour(s) and 20 minute(s)  - your current study time is 79:33 Hour(s)  - Python studies
-05/10/2023 - added  1 hour(s) and 27 minute(s)  - your current study time is 81 Hour(s)     - Python studies
-05/10/2023 - added  2 hour(s) and 20 minute(s)  - your current study time is 83:20 Hour(s)  - Python studies
-05/10/2023 - added  20 hour(s) and 30 minute(s) - your current study time is 103:50 Hour(s) - Python studies
-05/10/2023 - added  1 hour(s) and 20 minute(s)  -  your current study time is 105:10 Hour(s) - Python studies
-05/10/2023 - added  3 hour(s) and 2 minute(s)   -  your current study time is 108:12 Hour(s) - Python studies
-05/10/2023 - added  20 minute(s)                -  your current study time is 108:32 Hour(s) - Python studies
-05/10/2023 - added  1 hour(s) and 2 minute(s)   -  your current study time is 109:34 Hour(s) - Python studies
-05/10/2023 - added   2 minute(s)                -  your current study time is 109:36 Hour(s) - Python studies
-05/10/2023 - added   2 minute(s)                          -  your current study time is 109:38 Hour(s) - Python studies
-05/10/2023 - added  1 hour(s) and 1 minute(s)   -  your current study time is 110:39 Hour(s) - Python studies
-05/10/2023 - added                   2 minute(s)-  your current study time is 110:41 Hour(s) - Python studies
-05/10/2023 - added              2 minute(s)-  your current study time is 110:43 Hour(s) - Python studies
-05/10/2023 - added                 2 minute(s) - your current study time is 110:45 Hour(s) - Python studies
-05/10/2023 - added                2 minute(s) - your current study time is 110:47 Hour(s) - Python studies
-05/10/2023 - added               12 minute(s) - your current study time is 110:59 Hour(s) - Python studies
-05/10/2023 - added  1 hour(s) and 2 minute(s)   -  your current study time is 112:1 Hour(s)  - Python studies
-05/10/2023 - added  1 hour(s) and 20 minute(s)  -  your current study time is 113:21 Hour(s) - Python studies
-05/10/2023 - added  1 hour(s) and 2 minute(s)   -  your current study time is 114:23 Hour(s) - Python studies
-05/10/2023 - added                2 minute(s) - your current study time is 114:25 Hour(s) - Python studies
-05/10/2023 - added               20 minute(s) - your current study time is 114:45 Hour(s) - Python studies
-05/10/2023 - added                2 minute(s) - your current study time is 114:47 Hour(s) - Python studies
-05/10/2023 - added                2 minute(s) - your current study time is 114:49 Hour(s) - Python studies
-05/10/2023 - added               20 minute(s) - your current study time is 115:9 Hour(s)  - Python studies
-05/10/2023 - added  1 hour(s) and 20 minute(s)  -  your current study time is 116:29 Hour(s) - Python studies
-05/10/2023 - added                 2 minute(s) - your current study time is 116:31 Hour(s) - Python studies
-05/10/2023 - added                20 minute(s) - your current study time is 116:51 Hour(s) - Python studies
-05/10/2023 - added                20 minute(s)  -  your current study time is 117:11 Hour(s) - Python studies
-05/10/2023 - added                 2 minute(s)  -  your current study time is 117:13 Hour(s) - Python studies
-05/10/2023 - added  1 hour(s) and 2 minute(s)   -  your current study time is 118:15 Hour(s) - Python studies
-05/10/2023 - added   1 hour(s) and  2 minute(s) -  your current study time is 119:17 Hour(s) - Python studies
-05/10/2023 - added                   2 minute(s)  -  your current study time is 119:19 Hour(s) - Python studies
-05/10/2023 - added                  2 minute(s)  -  your current study time is 119:21 Hour(s) - Python studies
-05/10/2023 - added   1 hour(s) and  2 minute(s) -  your current study time is 120:23 Hour(s) - Python studies
-05/10/2023 - added   1 hour(s) and 20 minute(s) -  your current study time is 121:43 Hour(s) - Python studies
-05/10/2023 - added  20 hour(s) and 20 minute(s) -  your current study time is 142:3 Hour(s)  - Python studies
-05/10/2023 - added                 20 minute(s)  -  your current study time is 142:23 Hour(s) - Python studies
+--------------------------------------------------------------------------------------------------------------
+                                        Python language time recording                                        
+--------------------------------------------------------------------------------------------------------------
+05/10/2023 - added                  3 minute(s)  -  your current study time is 223:21 Hour(s) - Python studies
+05/10/2023 - added   2 hour(s) and  2 minute(s)  -  your current study time is 225:23 Hour(s) - Python studies

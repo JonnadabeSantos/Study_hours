@@ -105,15 +105,11 @@ while True:
 
                                                 file_linguage = f'Fake_bank/Hours_linguages/{keylist[ opc - 1]}.txt'                                            
                                                 if not verificarArquivo(file_linguage) and ( addhours or addminite ) != 0:                                                 
-                                                    criarArquivo( file_linguage, cabeçalho( f"{keylist[ opc - 1]} language time recording", 102 ) )
-                                                    
-                                                    if not 'Sorry' in reg_now:
-                                                        print('x')
-                                                        updateHours( file_linguage, reg_now )
+                                                    criarArquivo( file_linguage, cabeçalho( f"{keylist[ opc - 1]} language time recording", 110 ) )                                                                                                 
+                                                    updateHours( file_linguage, reg_now )
                                                
                                                 else:
-                                                    if not 'Sorry' in reg_now:
-                                                        print('z')
+                                                    if not 'Sorry' in reg_now:                                                 
                                                         updateHours( file_linguage, reg_now )
                                                         
                                                 
