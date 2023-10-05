@@ -9,9 +9,9 @@ def verificarArquivo(arquivo):
         return False
     else:
         return True
-    
+ 
 
-def criarArquivo(nome,dici=''):
+def criarArquivo(nome,dici):
     try:
         a = open(nome, 'wt+')
     except:
@@ -71,6 +71,21 @@ def updateDict( arq, dict ):
 
     
 
+def updateHours( arq, addDate ):
+    try:
+        a = open( arq, 'at')
+    except:
+        print('Houve um erro na abertura dos dados!')
+    else:
+        try:
+            a.write(f'{addDate}\n' )
+        except:
+            print('Houve um erro na escrita dos dados!')
+    finally:
+            a.close()
+
+
+
 
 def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
     try:
@@ -85,3 +100,34 @@ def cadastrarNovo( arq, nome='desconhecido', idade=0 ):
         else:
             print(f'Novo registro de {nome} adicionado!')
             a.close()
+
+
+def register_hours( hour, minute, hourMinute, data = False ):    
+    dateNow = datetime.now().strftime('%d/%m/%Y')
+
+    if ( hour and minute ) != 0:
+        if data:
+            string_horaMinuto = f'{hour:>2} hour(s) and {minute:>2} minute(s)'
+            string_timestudy = f'your current study time is {hourMinute} Hour(s)'
+            return f'{dateNow} - added  {string_horaMinuto:<28} -  {string_timestudy:<41}'
+        else:
+            return f'Successfully adding {hour} hour(s) and {minute} minute(s) to your -'
+    
+    else:   
+        if hour == 0 and minute != 0:
+            if data:
+                string_minute = f'{minute:>2} minute(s)'
+                string_time = f'your current study time is {hourMinute} Hour(s)'
+                return f'{dateNow} - added  {string_minute:>27}  -  {string_time:<41}'
+            else:
+                return f'Successfully adding {minute} minute(s) to your -'
+
+        elif hour != 0 and minute == 0:
+            if data:
+                string_hour = f'{hour:>2} hour(s)'
+                string_Fulltime = f'your current study time is {hourMinute} Hour(s)'
+                return f'{dateNow} - added  {string_hour:<29}-  {string_Fulltime:<41}'
+            else:
+                return f'Successfully adding {hour} hour(s) to your -'
+        else:
+            return f'Sorry ! but no hour(s) or minute(s) was added to your -'
