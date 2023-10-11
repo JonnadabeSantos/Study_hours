@@ -910,6 +910,19 @@ while True:
                                     else:
                                         print('\nIvalid Option ! Type YES or NO')
                                         sleep(1)       
+                        
+                        elif opc == len( linguages ) + 1:
+                            break
+
+                        elif opc == len( linguages ) + 2:
+                            EndProgram = True
+
+                    else:
+                        print(f'ERROR ! select number between 1 and {len( linguages ) + 2}\n')
+                        sleep(1)
+
+
+
 
 
 
