@@ -35,15 +35,15 @@ def menu(dict):
 
 def cadastrar():
     print( '-' * 40 )
-    print('OPÇÃO 01'.center(40) )
+    print('OPTION 01'.center(40) )
     print( '-' * 40 )
 
 def dictr():
     print( '-' * 40 )
-    print('OPÇÃO 02'.center(40) )
+    print('OPTION 02'.center(40) )
     print( '-' * 40 )
 
 def sair():
     print( '-' * 40 )
-    print('SAINDO ATE LOGO !'.center(40) )
+    print('see you soon !'.center(40) .upper() )
     print( '-' * 40 )
